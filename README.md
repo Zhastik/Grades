@@ -10,10 +10,38 @@
 git clone https://github.com/Zhastik/Grades
 ```
 ```bash
-cd <путь до папки>
+Grades
 ```
 
-## Start
+## Start  
+Установка зависимостей
+```bash
+pip install -r requirements.txt
+```
+
+Создание бд
+```psql
+CREATE DATABASE grades_db;
+CREATE USER grades_user WITH PASSWORD 'grades_pass';
+GRANT ALL PRIVILEGES ON DATABASE grades_db TO grades_user;
+```
+
+Если alembic будет ругать на права доступа
+```psql
+GRANT USAGE, CREATE ON SCHEMA public TO grades_user;
+```
+
+Миграции Alembic
+```bash
+alembic upgrade head
+```
+
+Запуск
+```bash
+uvicorn app.main:app --reload
+```
+
+## Start через Docker 
 Запуск через Docker Compose
 ```bash
 docker compose up --build
