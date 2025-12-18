@@ -31,6 +31,15 @@ GRANT ALL PRIVILEGES ON DATABASE grades_db TO grades_user;
 GRANT USAGE, CREATE ON SCHEMA public TO grades_user;
 ```
 
+Переменные окружения
+```
+$env:DB_HOST="localhost"
+$env:DB_PORT="5432"
+$env:DB_NAME="grades_db"
+$env:DB_USER="grades_user"
+$env:DB_PASS="grades_pass"
+```
+
 Миграции Alembic
 ```bash
 alembic upgrade head
