@@ -12,9 +12,6 @@ git clone https://github.com/Zhastik/Grades
 ```bash
 cd <путь до папки>
 ```
-```bash
-pip install -r requirements.txt
-```
 
 ## Start
 Запуск через Docker Compose
