@@ -13,7 +13,15 @@ git clone https://github.com/Zhastik/Grades
 cd Grades
 ```
 
-## Start  
+## Start через Docker 
+Запуск через Docker Compose
+```bash
+docker compose up --build
+```
+`API:` http://localhost:8000
+`Swagger:` http://localhost:8000/docs
+
+## Start не через Docker
 Установка зависимостей
 ```bash
 pip install -r requirements.txt
@@ -49,12 +57,3 @@ alembic upgrade head
 ```bash
 uvicorn app.main:app --reload
 ```
-
-## Start через Docker 
-Запуск через Docker Compose
-```bash
-docker compose up --build
-```
-`API:` http://localhost:8000
-`Swagger:` http://localhost:8000/docs
-
